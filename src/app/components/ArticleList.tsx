@@ -7,6 +7,8 @@ interface ArticleListProps {
 }
 
 const ArticleList = ({ articles }: ArticleListProps) => {
+  const displayContentLength = 200;
+
   if (articles.length === 0) {
     return <></>;
   }
@@ -35,7 +37,9 @@ const ArticleList = ({ articles }: ArticleListProps) => {
             </Link>
             <p className="mt-4 text-sm">Published on {article.createdAt}</p>
             <Link href={`/articles/${article.id}`} className="mt-3">
-              {article.content}
+              {article.content.length <= displayContentLength
+                ? article.content
+                : `${article.content.substring(0, displayContentLength)}...`}
             </Link>
             <Link
               href={`/articles/${article.id}`}
