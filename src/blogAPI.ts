@@ -53,3 +53,16 @@ export const createArticle = async (
   const newArticle: Article = await response.json();
   return newArticle;
 };
+
+export const deleteArticleById = async (id: string): Promise<Article> => {
+  const response = await fetch(`http://localhost:3001/articles/${id}`, {
+    method: "DELETE",
+  });
+
+  if (!response.ok) {
+    throw new Error("エラーが発生しました");
+  }
+
+  const deleteArticle: Article = await response.json();
+  return deleteArticle;
+};
