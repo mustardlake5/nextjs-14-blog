@@ -1,11 +1,13 @@
-import Link from "next/link";
 import ArticleList from "./components/ArticleList";
+import { getAllArticles } from "@/blogAPI";
 
-export default function Home() {
+export default async function Home() {
+  const articles = await getAllArticles();
+
   return (
     <div className="md:flex justify-between mx-3 md:mx-5 my-5">
       <section className="w-full md:w-2/3">
-        <ArticleList />
+        <ArticleList articles={articles} />
       </section>
 
       <aside className="w-full md:w-1/3 flex flex-col items-center md:pl-6">
