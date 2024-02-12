@@ -1,6 +1,6 @@
 const CreateBlogPage = () => {
   return (
-    <div className="min-h-[70vh] mx-3 md:mx-5 my-5">
+    <div className="mx-3 md:mx-5 my-5">
       <h2 className="text-2xl font-bold">ブログ新規作成</h2>
 
       <form className="mt-4 bg-slate-200 p-6 rounded shadow-lg">
