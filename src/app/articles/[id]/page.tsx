@@ -1,8 +1,13 @@
-import { getArticleById } from "@/blogAPI";
+import DeleteButton from "@/app/components/DeleteButton";
+import { deleteArticleById, getArticleById } from "@/blogAPI";
 import Image from "next/image";
 
 const Article = async ({ params }: { params: { id: string } }) => {
   const article = await getArticleById(params.id);
+
+  // const handleDelete = async () => {
+  //   await deleteArticleById(params.id);
+  // };
 
   return (
     <div className="max-w-3xl mx-auto m-5">
@@ -20,6 +25,10 @@ const Article = async ({ params }: { params: { id: string } }) => {
         <p className="mt-10 text-lg leading-relaxed text-justify">
           {article.content}
         </p>
+      </div>
+
+      <div className="text-right mt-3">
+        <DeleteButton id={article.id} />
       </div>
     </div>
   );
