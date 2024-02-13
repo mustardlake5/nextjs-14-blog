@@ -1,36 +1,29 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next.js 14 Blog(without backend)
 
-## Getting Started
+## プロジェクトの始め方
 
-First, run the development server:
+まず、このプロジェクトをクローンし、パッケージをインストールしてください。
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```zsh
+$ git clone [prefix]mustardlake5/nextjs-14-blog.git
+$ cd nextjs-14-blog
+$ yarn install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+次に、Next.js の開発サーバをポート 3000 番で立ち上げます。
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```zsh
+$ yarn dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+このプロジェクトはバックエンドの API や DB が存在しないので、json-server を使用してローカルで動作確認をするようにしています。
+擬似的な API エンドポイントに必要な json-server 用モックファイル(articles.mock.json)を準備し、json-server をポート 3001 番で立ち上げてください。
 
-## Learn More
+```zsh
+$ cp articles.mock.json{.template,}
+$ yarn json-server
+```
 
-To learn more about Next.js, take a look at the following resources:
+以上で、ブログの準備は完了です。
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+ブラウザから[http://localhost:3000](http://localhost:3000)へアクセスし、右上の「記事を書く」から最初の記事を書いてください。
