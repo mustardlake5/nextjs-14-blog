@@ -1,3 +1,6 @@
+> [!CAUTION]
+> こちらは自身の勉強用のプロジェクトです。
+
 # Next.js 14 Blog(without backend)
 
 ## プロジェクトの始め方
